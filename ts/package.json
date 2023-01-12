@@ -1,0 +1,24 @@
+{
+  "name": "example_program",
+  "version": "0.1.0",
+  "description": "Otterop example program",
+  "main": "program.js",
+  "scripts": {
+    "test": "npm test",
+    "build": "tsc -p ."
+  },
+  "keywords": [
+    "otterop",
+    "example"
+  ],
+  "author": "Emanuele Sabellico",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@otterop/io": "^0.1.0",
+    "@otterop/lang": "^0.1.0"
+  }
+}

@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "example-quicksort"
+version = "0.1.0"
+authors = [
+  { name="Emanuele Sabellico", email="emasab@gmail.com" },
+]
+description = "OtterOP Quicksort Example"
+requires-python = ">=3.7"
+dependencies = [
+  'otterop-io >= 0.1.0',
+  'otterop-lang >= 0.1.0'
+]
