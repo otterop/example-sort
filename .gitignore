@@ -8,3 +8,6 @@ build
 _venv
 node_modules
 c/gc
+
+bin
+obj
