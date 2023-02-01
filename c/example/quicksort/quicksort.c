@@ -1,6 +1,4 @@
-#include <otterop/lang/array.h>
-#include <otterop/lang/string.h>
-#include <otterop/io/console.h>
+#include <example/quicksort/quicksort.h>
 
 typedef struct example_quicksort_Quicksort_s {
     int a;
@@ -11,17 +9,7 @@ typedef struct example_quicksort_Quicksort_s {
 
 
 
-example_quicksort_Quicksort_t *example_quicksort_Quicksort_new(int a, double b, otterop_lang_String_t *c);
-
-void example_quicksort_Quicksort_hello(example_quicksort_Quicksort_t *this);
-
 void example_quicksort_Quicksort_swap(otterop_lang_Array_t *array, int from_idx, int to_idx);
-
-void example_quicksort_Quicksort_quick_sort(otterop_lang_Array_t *array, int from_idx, int to_idx);
-
-void example_quicksort_Quicksort_main(size_t args_cnt, char *args[]);
-
-otterop_lang_String_t *example_quicksort_Quicksort_string(example_quicksort_Quicksort_t *this);
 
 void example_quicksort_Quicksort_hello(example_quicksort_Quicksort_t *this) {
     otterop_io_Console_println(otterop_lang_String_wrap("world"));

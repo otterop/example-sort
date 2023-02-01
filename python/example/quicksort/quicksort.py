@@ -1,7 +1,7 @@
 import sys
-from otterop_lang import Array
-from otterop_lang import String
-from otterop_io import Console
+from otterop.lang.array import Array
+from otterop.lang.string import String
+from otterop.io.console import Console
 println = Console.println
 
 class Quicksort:
