@@ -12,6 +12,8 @@ bin
 obj
 out
 *.js
+__pycache__
+go/quicksort
 
 CMakeCache.txt
 CMakeFiles
