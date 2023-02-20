@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Otterop.Io" Version="0.1.0" />
-    <PackageReference Include="Otterop.Lang" Version="0.1.0" />
+    <ProjectReference Include="../../otterop/dotnet/Lang/Otterop.Lang.csproj" />
+    <ProjectReference Include="../../otterop/dotnet/Io/Otterop.Io.csproj" />
+    <!--
+    <PackageReference Include="Otterop.Io" Version="0.2.0" />
+    <PackageReference Include="Otterop.Lang" Version="0.2.0" />
+    -->
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,7 @@ import sys
 from example.quicksort.service.quicksort_service import QuicksortService
 from otterop.lang.array import Array
 from otterop.lang.string import String
+from otterop.lang.result import Result
 from otterop.io.console import Console
 println = Console.println
 
@@ -15,6 +16,7 @@ class Quicksort:
         while i < args_array.size():
             println(args_array.get(i))
             i = i + 1
+        Result.of(String.wrap(""), String.wrap(""))
 
 if __name__ == "__main__":
     Quicksort.main(sys.argv[1:])

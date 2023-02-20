@@ -1,6 +1,6 @@
 namespace Example.Quicksort
 {
-    class Quicksort
+    public class Quicksort
     {
         public static void Main(string[] args)
         {
@@ -13,6 +13,7 @@ namespace Example.Quicksort
                 i = i + 1;
             }
 
+            Otterop.Lang.Result.Of(Otterop.Lang.String.Wrap(""), Otterop.Lang.String.Wrap(""));
         }
 
     }

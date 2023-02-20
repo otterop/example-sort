@@ -1,6 +1,6 @@
 namespace Example.Quicksort.Service
 {
-    class QuicksortService
+    public class QuicksortService
     {
         static void Swap(Otterop.Lang.Array<Otterop.Lang.String> array, int fromIdx, int toIdx)
         {

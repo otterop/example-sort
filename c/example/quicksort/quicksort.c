@@ -15,6 +15,7 @@ void example_quicksort_Quicksort_main(size_t args_cnt, char *args[]) {
         otterop_io_Console_println(otterop_lang_Array_get(args_array, i));
         i = i + 1;
     }
+    otterop_lang_Result_of(otterop_lang_String_wrap(""), otterop_lang_String_wrap(""));
 }
 
 int main(int args_cnt, char *args_arr[]) {

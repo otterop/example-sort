@@ -4,6 +4,8 @@ import (
     "os"
     "github.com/otterop/example-quicksort/go/example/quicksort/service/quicksortservice"
     "github.com/otterop/otterop/go/lang/array"
+    "github.com/otterop/otterop/go/lang/string"
+    "github.com/otterop/otterop/go/lang/result"
     "github.com/otterop/otterop/go/io/console"
 )
 var Println = console.Println
@@ -24,4 +26,5 @@ func main()  {
         Println(argsArray.Get(i))
         i = i + 1
     }
+    result.Of(string.Wrap(""), string.Wrap(""))
 }

@@ -3,6 +3,7 @@
 #include <example/quicksort/service/quicksort_service.h>
 #include <otterop/lang/array.h>
 #include <otterop/lang/string.h>
+#include <otterop/lang/result.h>
 #include <otterop/io/console.h>
 
 typedef struct example_quicksort_Quicksort_s example_quicksort_Quicksort_t;
