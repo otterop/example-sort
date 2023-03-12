@@ -27,5 +27,5 @@ function(find_static_library LIB_NAME OUT)
 
 endfunction()
 
-include(./example/quicksort/CMakeLists.txt)
+include(./example/sort/CMakeLists.txt)
 include_directories(.)

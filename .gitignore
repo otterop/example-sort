@@ -19,3 +19,4 @@ CMakeCache.txt
 CMakeFiles
 *.cmake
 Makefile
+go/example/sort/sort/sort
