@@ -17,20 +17,20 @@ func NewQuicksortService() *QuicksortService {
 }
 
 func (this *QuicksortService) swap(array *array.Array[*string.String], fromIdx int, toIdx int)  {
-    tmp := array.Get(toIdx)
+    var tmp *string.String = array.Get(toIdx)
     array.Set(toIdx, array.Get(fromIdx))
     array.Set(fromIdx, tmp)
 }
 
 func (this *QuicksortService) Sort(array *array.Array[*string.String], fromIdx int, toIdx int)  {
-    i := fromIdx
-    swapWith := -1
-    pivot := toIdx - 1
+    var i int = fromIdx
+    var swapWith int = -1
+    var pivot int = toIdx - 1
     
     for i < pivot {
-        iString := array.Get(i)
-        pivotString := array.Get(pivot)
-        lessThan := iString.CompareTo(pivotString) < 0
+        var iString *string.String = array.Get(i)
+        var pivotString *string.String = array.Get(pivot)
+        var lessThan bool = iString.CompareTo(pivotString) < 0
         
         if swapWith >= 0 && lessThan {
             this.swap(array, swapWith, i)
@@ -42,8 +42,8 @@ func (this *QuicksortService) Sort(array *array.Array[*string.String], fromIdx i
     }
     
     if swapWith >= 0 && swapWith < pivot {
-        swapWithString := array.Get(swapWith)
-        pivotString := array.Get(pivot)
+        var swapWithString *string.String = array.Get(swapWith)
+        var pivotString *string.String = array.Get(pivot)
         
         if swapWithString.CompareTo(pivotString) >= 0 {
             this.swap(array, swapWith, pivot)

@@ -1,5 +1,6 @@
 #ifndef __example_sort_Sort
 #define __example_sort_Sort
+#include <example/sort/service/heapsort_service.h>
 #include <example/sort/service/quicksort_service.h>
 #include <example/sort/service/sort_service.h>
 #include <otterop/lang/array.h>
@@ -10,6 +11,7 @@
 typedef struct example_sort_Sort_s example_sort_Sort_t;
 
 
+int example_sort_Sort_test;
 
 
 void example_sort_Sort_main(size_t args_cnt, char *args[]);

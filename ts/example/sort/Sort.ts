@@ -1,3 +1,4 @@
+import { HeapsortService } from './service/HeapsortService';
 import { QuicksortService } from './service/QuicksortService';
 import { SortService } from './service/SortService';
 import { Array } from '@otterop/lang/array';
@@ -8,11 +9,33 @@ const { println } = Console;
 
 export class Sort {
 
-    public static main(args : string[]) : void {
-        let argsArray = Array.wrapString(args);
-        let sortService = new QuicksortService();
+    private static TEST : number = 111;
+
+    static main(args : string[]) : void {
+        let quick : String = String.wrap("quick");
+        let heap : String = String.wrap("heap");
+        let argsArray : Array<String> = Array.wrapString(args);
+        
+        if (argsArray.size() < 1) {
+            println(String.wrap("Usage: <quick|heap> ...values"));
+            return ;
+        }
+        let sortAlgorithm : String = argsArray.get(0);
+        let isQuick : boolean = sortAlgorithm.compareTo(quick) == 0;
+        let isHeap : boolean = sortAlgorithm.compareTo(heap) == 0;
+        
+        if (!(isQuick || isHeap)) {
+            println(String.wrap("Usage: <quick|heap> ...values"));
+            return ;
+        }
+        argsArray = argsArray.slice(1, argsArray.size());
+        let sortService : SortService = new QuicksortService();
+        
+        if (isHeap) {
+            sortService = new HeapsortService();
+        }
         sortService.sort(argsArray, 0, argsArray.size());
-        for (let i = 0; i < argsArray.size(); i++) {
+        for (let i : number = 0; i < argsArray.size(); i++) {
             println(argsArray.get(i));
         }
         Result.of(String.wrap(""), String.wrap(""));

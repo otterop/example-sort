@@ -7,20 +7,20 @@ export class QuicksortService {
     }
 
     swap(array : Array<String>, fromIdx : number, toIdx : number) : void {
-        let tmp = array.get(toIdx);
+        let tmp : String = array.get(toIdx);
         array.set(toIdx, array.get(fromIdx));
         array.set(fromIdx, tmp);
     }
 
     public sort(array : Array<String>, fromIdx : number, toIdx : number) : void {
-        let i = fromIdx;
-        let swapWith = -1;
-        let pivot = toIdx - 1;
+        let i : number = fromIdx;
+        let swapWith : number = -1;
+        let pivot : number = toIdx - 1;
         
         while (i < pivot) {
-            let iString = array.get(i);
-            let pivotString = array.get(pivot);
-            let lessThan = iString.compareTo(pivotString) < 0;
+            let iString : String = array.get(i);
+            let pivotString : String = array.get(pivot);
+            let lessThan : boolean = iString.compareTo(pivotString) < 0;
             
             if (swapWith >= 0 && lessThan) {
                 this.swap(array, swapWith, i);
@@ -32,8 +32,8 @@ export class QuicksortService {
         }
         
         if (swapWith >= 0 && swapWith < pivot) {
-            let swapWithString = array.get(swapWith);
-            let pivotString = array.get(pivot);
+            let swapWithString : String = array.get(swapWith);
+            let pivotString : String = array.get(pivot);
             
             if (swapWithString.compareTo(pivotString) >= 0) {
                 this.swap(array, swapWith, pivot);
