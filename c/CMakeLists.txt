@@ -1,3 +1,5 @@
+project(example_sort)
+
 cmake_minimum_required(VERSION 3.16)
 set(CMAKE_BINARY_DIR out)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -28,4 +30,9 @@ function(find_static_library LIB_NAME OUT)
 endfunction()
 
 include(./example/sort/CMakeLists.txt)
+include(./otterop/io/CMakeLists.txt)
+include(./otterop/lang/CMakeLists.txt)
+find_static_library(gc GC)
+target_link_libraries(example_sort otterop_io otterop_lang ${GC} pthread dl)
+set_property(TARGET example_sort PROPERTY C_STANDARD 99)
 include_directories(.)

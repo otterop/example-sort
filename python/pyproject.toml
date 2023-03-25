@@ -11,6 +11,6 @@ authors = [
 description = "OtterOP Quicksort Example"
 requires-python = ">=3.7"
 dependencies = [
-  'otterop-io >= 0.1.0.post2',
-  'otterop-lang >= 0.1.0.post2'
+  'otterop-io >= 0.2.0',
+  'otterop-lang >= 0.2.0'
 ]

@@ -1,0 +1,3 @@
+[submodule "otterop"]
+	path = otterop
+	url = git@github.com:otterop/otterop.git

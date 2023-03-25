@@ -1,6 +1,6 @@
-module github.com/otterop/example-quicksort/go
+module github.com/otterop/example-sort/go
 
-replace github.com/otterop/otterop/go => ../../otterop/go
+replace github.com/otterop/otterop/go => ../otterop/go
 
 go 1.18
 

@@ -13,7 +13,7 @@ obj
 out
 *.js
 __pycache__
-go/quicksort
+go/sort
 
 CMakeCache.txt
 CMakeFiles

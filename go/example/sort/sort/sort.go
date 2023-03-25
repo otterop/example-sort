@@ -2,9 +2,9 @@ package main
 
 import (
     "os"
-    "github.com/otterop/example-quicksort/go/example/sort/service/heapsortservice"
-    "github.com/otterop/example-quicksort/go/example/sort/service/quicksortservice"
-    "github.com/otterop/example-quicksort/go/example/sort/service/sortservice"
+    "github.com/otterop/example-sort/go/example/sort/service/heapsortservice"
+    "github.com/otterop/example-sort/go/example/sort/service/quicksortservice"
+    "github.com/otterop/example-sort/go/example/sort/service/sortservice"
     "github.com/otterop/otterop/go/lang/array"
     "github.com/otterop/otterop/go/lang/string"
     "github.com/otterop/otterop/go/lang/result"

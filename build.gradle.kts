@@ -24,9 +24,16 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
 }
 
+tasks.withType<Jar>() {
+    manifest.attributes["Main-Class"] = "example.sort.Sort"
+    configurations["compileClasspath"].forEach { file: File ->
+        from(zipTree(file.absoluteFile))
+    }
+}
+
 application {
     // Define the main class for the application.
-    mainClass.set("example.quicksort.App")
+    mainClass.set("example.sort.Sort")
 }
 
 tasks.named<Test>("test") {
