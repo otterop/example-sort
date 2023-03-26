@@ -3,11 +3,16 @@ build-python build-go build-ts
 
 VERSION=0.2.0-SNAPSHOT
 
-.PHONY: otterop
-otterop:
+.PHONY: otterop init-submodules transpile \
+build-java build-python build-c build-ts \
+build-dotnet build-go clean
+
+init-submodules:
+	@git submodule update --init --recursive
+
+otterop: init-submodules
 	@echo "Install OtterOP Java libraries ..."
-	@(git submodule update --init --recursive && \
-	cd otterop/java && \
+	@(cd otterop/java && \
 	./gradlew build publishToMavenLocal :transpiler:jar) > /dev/null
 
 transpile: otterop build-java
@@ -48,12 +53,12 @@ build-go:
 	@(cd go/example/sort/sort && \
 	go build) > /dev/null
 
-clean:
+clean: init-submodules
 	@echo "Cleaning ..."
 	@(rm -rf ./python/_venv \
 	ts/node_modules && \
 	rm -rf ./c/CMakeCache.txt && \
 	rm -rf dotnet/Example ./c/example go/example python/example ts/example && \
-	(cd otterop/java && ./gradlew clean) && \
-	./gradlew clean) > /dev/null
+	./gradlew clean && \
+	cd otterop/java && ./gradlew clean) > /dev/null
 
