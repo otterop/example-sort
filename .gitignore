@@ -18,5 +18,5 @@ go/sort
 CMakeCache.txt
 CMakeFiles
 *.cmake
-Makefile
+c/Makefile
 go/example/sort/sort/sort
