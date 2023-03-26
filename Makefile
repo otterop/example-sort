@@ -6,7 +6,7 @@ VERSION=0.2.0-SNAPSHOT
 .PHONY: otterop
 otterop:
 	@echo "Install OtterOP Java libraries ..."
-	@(git submodule init && \
+	@(git submodule update --init --recursive && \
 	cd otterop/java && \
 	./gradlew build publishToMavenLocal :transpiler:jar) > /dev/null
 
