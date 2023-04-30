@@ -1,4 +1,4 @@
-build: otterop transpile build-java build-dotnet build-c \
+build: transpile build-java build-dotnet build-c \
 build-python build-go build-ts
 
 VERSION=0.2.0-SNAPSHOT
@@ -7,10 +7,17 @@ VERSION=0.2.0-SNAPSHOT
 build-java build-python build-c build-ts \
 build-dotnet build-go clean
 
+init: init-submodules
+
 init-submodules:
 	@git submodule update --init --recursive
 
-otterop: init-submodules
+check-submodules:
+	@if git submodule status | grep --quiet '^-'; then \
+		echo "A git submodule is not initialized." && exit 1; \
+	fi
+
+otterop: check-submodules
 	@echo "Install OtterOP Java libraries ..."
 	@(cd otterop/java && \
 	./gradlew build publishToMavenLocal :transpiler:jar) > /dev/null
@@ -53,12 +60,11 @@ build-go:
 	@(cd go/example/sort/sort && \
 	go build) > /dev/null
 
-clean: init-submodules
+clean: check-submodules
 	@echo "Cleaning ..."
 	@(rm -rf ./python/_venv \
 	ts/node_modules && \
 	rm -rf ./c/CMakeCache.txt && \
-	rm -rf dotnet/Example ./c/example go/example python/example ts/example && \
 	./gradlew clean && \
 	cd otterop/java && ./gradlew clean) > /dev/null
 

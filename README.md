@@ -6,10 +6,10 @@ The program sorts string using either the quicksort or the heapsort in-place alg
 
 # Usage
 
-Optionally remove the existing transpiled code
+Initialize repo, including git submodules
 
 ```sh
-make clean
+make init
 ```
 
 Build Java code, transpile and build the rest of the languages.
