@@ -1,9 +1,10 @@
 package example.sort.service;
 
-import otterop.io.Console;
 import otterop.lang.Array;
+import otterop.lang.MakePure;
 import otterop.lang.String;
 
+@MakePure
 public class HeapsortService implements SortService {
     public HeapsortService() {
     }

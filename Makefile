@@ -33,7 +33,9 @@ build-java:
 build-python:
 	@echo "Build Python example ..."
 	@(cd python && \
-	python -m venv _venv && \
+	if [ ! -d _venv ]; then \
+	python -m venv _venv; \
+	fi && \
 	. ./_venv/bin/activate && \
 	python -m pip install .) > /dev/null
 

@@ -1,6 +1,5 @@
 #ifndef __example_sort_service_HeapsortService
 #define __example_sort_service_HeapsortService
-#include <otterop/io/console.h>
 #include <otterop/lang/array.h>
 #include <otterop/lang/string.h>
 #include <example/sort/service/sort_service.h>

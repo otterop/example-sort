@@ -9,7 +9,7 @@ const { println } = Console;
 
 export class Sort {
 
-    private static TEST : number = 111;
+    private static _TEST : number = 111;
 
     static main(args : string[]) : void {
         let quick : String = String.wrap("quick");

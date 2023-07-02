@@ -1,4 +1,3 @@
-import { Console } from '@otterop/io/console';
 import { Array } from '@otterop/lang/array';
 import { String } from '@otterop/lang/string';
 

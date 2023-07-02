@@ -1,4 +1,3 @@
-from otterop.io.console import Console
 from otterop.lang.array import Array
 from otterop.lang.string import String
 

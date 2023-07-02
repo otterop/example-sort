@@ -1,8 +1,10 @@
 package example.sort.service;
 
 import otterop.lang.Array;
+import otterop.lang.MakePure;
 import otterop.lang.String;
 
+@MakePure
 public class QuicksortService implements SortService {
 
     public QuicksortService() {
