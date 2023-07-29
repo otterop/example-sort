@@ -10,6 +10,9 @@ typedef struct example_sort_service_HeapsortService_s {
 void example_sort_service_HeapsortService_heapify(example_sort_service_HeapsortService_t *this, otterop_lang_Array_t *array, int parent, int size);
 
 
+void example_sort_service_HeapsortService_sort_with_indices(example_sort_service_HeapsortService_t *this, otterop_lang_Array_t *array, int from_idx, int to_idx);
+
+
 example_sort_service_HeapsortService_t *example_sort_service_HeapsortService_new() {
     example_sort_service_HeapsortService_t *this = GC_malloc(sizeof(example_sort_service_HeapsortService_t));
     return this;
@@ -48,7 +51,7 @@ void example_sort_service_HeapsortService_heapify(example_sort_service_HeapsortS
     }
 }
 
-void example_sort_service_HeapsortService_sort(example_sort_service_HeapsortService_t *this, otterop_lang_Array_t *array, int from_idx, int to_idx) {
+void example_sort_service_HeapsortService_sort_with_indices(example_sort_service_HeapsortService_t *this, otterop_lang_Array_t *array, int from_idx, int to_idx) {
     int n = otterop_lang_Array_size(array);
     for (int i = n / 2 - 1; i >= 0; i--) {
         example_sort_service_HeapsortService_heapify(this, array, i, n);
@@ -59,9 +62,14 @@ void example_sort_service_HeapsortService_sort(example_sort_service_HeapsortServ
     }
 }
 
+otterop_lang_Array_t *example_sort_service_HeapsortService_sort(example_sort_service_HeapsortService_t *this, otterop_lang_Array_t *array) {
+    example_sort_service_HeapsortService_sort_with_indices(this, array, 0, otterop_lang_Array_size(array));
+    return array;
+}
+
 example_sort_service_SortService_t
 *example_sort_service_HeapsortService__to_example_sort_service_SortService(example_sort_service_HeapsortService_t *this) {
     return example_sort_service_SortService_new(this,
-        (void (*)(void *, otterop_lang_Array_t *, int, int)) example_sort_service_HeapsortService_sort);
+        (otterop_lang_Array_t * (*)(void *, otterop_lang_Array_t *)) example_sort_service_HeapsortService_sort);
 }
 

@@ -1,13 +1,17 @@
 from otterop.lang.array import Array
 
 class Node:
-    
-    def __init__(self, children):
-        self.children = children
+        
+    def __init__(self, value, children):
+        self._value = value
+        self._children = children
+
+    def value(self):
+        return self._value
 
     def child(self, i):
-        children = self.children
+        children = self._children
         return children.get(i)
 
     def children(self):
-        return self.children
+        return self._children

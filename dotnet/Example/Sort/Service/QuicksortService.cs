@@ -13,7 +13,7 @@ namespace Example.Sort.Service
             array.Set(fromIdx, tmp);
         }
 
-        public void Sort(Otterop.Lang.Array<Otterop.Lang.String> array, int fromIdx, int toIdx)
+        void SortWithIndices(Otterop.Lang.Array<Otterop.Lang.String> array, int fromIdx, int toIdx)
         {
             int i = fromIdx;
             int swapWith = -1;
@@ -50,14 +50,20 @@ namespace Example.Sort.Service
 
             if (pivot > fromIdx + 1)
             {
-                Sort(array, fromIdx, pivot);
+                SortWithIndices(array, fromIdx, pivot);
             }
 
             if (pivot + 1 < toIdx - 1)
             {
-                Sort(array, pivot + 1, toIdx);
+                SortWithIndices(array, pivot + 1, toIdx);
             }
 
+        }
+
+        public Otterop.Lang.Array<Otterop.Lang.String> Sort(Otterop.Lang.Array<Otterop.Lang.String> array)
+        {
+            SortWithIndices(array, 0, array.Size());
+            return array;
         }
 
     }

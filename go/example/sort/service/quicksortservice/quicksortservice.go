@@ -22,7 +22,7 @@ func (this *QuicksortService) swap(array *array.Array[*string.String], fromIdx i
     array.Set(fromIdx, tmp)
 }
 
-func (this *QuicksortService) Sort(array *array.Array[*string.String], fromIdx int, toIdx int)  {
+func (this *QuicksortService) sortWithIndices(array *array.Array[*string.String], fromIdx int, toIdx int)  {
     var i int = fromIdx
     var swapWith int = -1
     var pivot int = toIdx - 1
@@ -52,10 +52,15 @@ func (this *QuicksortService) Sort(array *array.Array[*string.String], fromIdx i
     }
     
     if pivot > fromIdx + 1 {
-        this.Sort(array, fromIdx, pivot)
+        this.sortWithIndices(array, fromIdx, pivot)
     }
     
     if pivot + 1 < toIdx - 1 {
-        this.Sort(array, pivot + 1, toIdx)
+        this.sortWithIndices(array, pivot + 1, toIdx)
     }
+}
+
+func (this *QuicksortService) Sort(array *array.Array[*string.String]) *array.Array[*string.String] {
+    this.sortWithIndices(array, 0, array.Size())
+    return array
 }

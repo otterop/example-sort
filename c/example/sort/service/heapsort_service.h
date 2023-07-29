@@ -14,7 +14,7 @@ example_sort_service_HeapsortService_t *example_sort_service_HeapsortService_new
 void example_sort_service_HeapsortService_swap(example_sort_service_HeapsortService_t *this, otterop_lang_Array_t *array, int from_idx, int to_idx);
 
 
-void example_sort_service_HeapsortService_sort(example_sort_service_HeapsortService_t *this, otterop_lang_Array_t *array, int from_idx, int to_idx);
+otterop_lang_Array_t *example_sort_service_HeapsortService_sort(example_sort_service_HeapsortService_t *this, otterop_lang_Array_t *array);
 
 
 example_sort_service_SortService_t

@@ -7,6 +7,9 @@ typedef struct example_sort_service_QuicksortService_s {
 
 
 
+void example_sort_service_QuicksortService_sort_with_indices(example_sort_service_QuicksortService_t *this, otterop_lang_Array_t *array, int from_idx, int to_idx);
+
+
 example_sort_service_QuicksortService_t *example_sort_service_QuicksortService_new() {
     example_sort_service_QuicksortService_t *this = GC_malloc(sizeof(example_sort_service_QuicksortService_t));
     return this;
@@ -18,7 +21,7 @@ void example_sort_service_QuicksortService_swap(example_sort_service_QuicksortSe
     otterop_lang_Array_set(array, from_idx, tmp);
 }
 
-void example_sort_service_QuicksortService_sort(example_sort_service_QuicksortService_t *this, otterop_lang_Array_t *array, int from_idx, int to_idx) {
+void example_sort_service_QuicksortService_sort_with_indices(example_sort_service_QuicksortService_t *this, otterop_lang_Array_t *array, int from_idx, int to_idx) {
     int i = from_idx;
     int swap_with = -1;
     int pivot = to_idx - 1;
@@ -48,17 +51,22 @@ void example_sort_service_QuicksortService_sort(example_sort_service_QuicksortSe
     }
     
     if (pivot > from_idx + 1) {
-        example_sort_service_QuicksortService_sort(this, array, from_idx, pivot);
+        example_sort_service_QuicksortService_sort_with_indices(this, array, from_idx, pivot);
     }
     
     if (pivot + 1 < to_idx - 1) {
-        example_sort_service_QuicksortService_sort(this, array, pivot + 1, to_idx);
+        example_sort_service_QuicksortService_sort_with_indices(this, array, pivot + 1, to_idx);
     }
+}
+
+otterop_lang_Array_t *example_sort_service_QuicksortService_sort(example_sort_service_QuicksortService_t *this, otterop_lang_Array_t *array) {
+    example_sort_service_QuicksortService_sort_with_indices(this, array, 0, otterop_lang_Array_size(array));
+    return array;
 }
 
 example_sort_service_SortService_t
 *example_sort_service_QuicksortService__to_example_sort_service_SortService(example_sort_service_QuicksortService_t *this) {
     return example_sort_service_SortService_new(this,
-        (void (*)(void *, otterop_lang_Array_t *, int, int)) example_sort_service_QuicksortService_sort);
+        (otterop_lang_Array_t * (*)(void *, otterop_lang_Array_t *)) example_sort_service_QuicksortService_sort);
 }
 

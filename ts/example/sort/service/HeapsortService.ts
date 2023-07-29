@@ -39,7 +39,7 @@ export class HeapsortService {
         }
     }
 
-    public sort(array : Array<String>, fromIdx : number, toIdx : number) : void {
+    sortWithIndices(array : Array<String>, fromIdx : number, toIdx : number) : void {
         let n : number = array.size();
         for (let i : number = Math.floor(n / 2) - 1; i >= 0; i--) {
             this.heapify(array, i, n);
@@ -48,6 +48,11 @@ export class HeapsortService {
             this.swap(array, 0, i);
             this.heapify(array, 0, i);
         }
+    }
+
+    public sort(array : Array<String>) : Array<String> {
+        this.sortWithIndices(array, 0, array.size());
+        return array;
     }
 }
 

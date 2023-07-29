@@ -8,7 +8,7 @@ namespace Example.Sort.Tree.Pure
         {
             this.otterop = wrapped;
         }
-        public Node(Example.Sort.Tree.Pure.Node[] children)
+        public Node(int value, Example.Sort.Tree.Pure.Node[] children)
         {
             var _childrenArray = new Example.Sort.Tree.Node[children.Count()];
             for (var i = 0; i < children.Count(); i++)
@@ -16,7 +16,14 @@ namespace Example.Sort.Tree.Pure
                 _childrenArray[i] = children[i].unwrap();
             }
             var _children = Otterop.Lang.Array.Wrap(_childrenArray);
-            this.otterop = new Example.Sort.Tree.Node(_children);
+            this.otterop = new Example.Sort.Tree.Node(value, _children);
+        }
+
+        public int Value()
+        {
+            var retOtterop = otterop.Value();
+            var ret = retOtterop;
+            return ret;
         }
 
         public Example.Sort.Tree.Pure.Node Child(int i)

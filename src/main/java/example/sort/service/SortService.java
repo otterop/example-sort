@@ -6,5 +6,5 @@ import otterop.lang.String;
 
 @MakePure
 public interface SortService {
-    void sort(Array<String> array, int fromIdx, int toIdx);
+    Array<String> sort(Array<String> array);
 }

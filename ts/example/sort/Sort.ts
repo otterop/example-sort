@@ -34,9 +34,9 @@ export class Sort {
         if (isHeap) {
             sortService = new HeapsortService();
         }
-        sortService.sort(argsArray, 0, argsArray.size());
-        for (let i : number = 0; i < argsArray.size(); i++) {
-            println(argsArray.get(i));
+        let ret : Array<String> = sortService.sort(argsArray);
+        for (let i : number = 0; i < ret.size(); i++) {
+            println(ret.get(i));
         }
         Result.of(String.wrap(""), String.wrap(""));
     }

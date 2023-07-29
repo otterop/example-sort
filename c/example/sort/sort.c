@@ -32,9 +32,9 @@ void example_sort_Sort_main(size_t args_cnt, char *args[]) {
     if (is_heap) {
         sort_service = example_sort_service_HeapsortService__to_example_sort_service_SortService(example_sort_service_HeapsortService_new());
     }
-    example_sort_service_SortService_sort(sort_service, args_array, 0, otterop_lang_Array_size(args_array));
-    for (int i = 0; i < otterop_lang_Array_size(args_array); i++) {
-        otterop_io_Console_println(otterop_lang_Array_get(args_array, i));
+    otterop_lang_Array_t *ret = example_sort_service_SortService_sort(sort_service, args_array);
+    for (int i = 0; i < otterop_lang_Array_size(ret); i++) {
+        otterop_io_Console_println(otterop_lang_Array_get(ret, i));
     }
     otterop_lang_Result_of(otterop_lang_String_wrap(""), otterop_lang_String_wrap(""));
 }

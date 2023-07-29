@@ -46,7 +46,7 @@ namespace Example.Sort.Service
 
         }
 
-        public void Sort(Otterop.Lang.Array<Otterop.Lang.String> array, int fromIdx, int toIdx)
+        void SortWithIndices(Otterop.Lang.Array<Otterop.Lang.String> array, int fromIdx, int toIdx)
         {
             int n = array.Size();
             for (int i = n / 2 - 1; i >= 0; i--)
@@ -60,6 +60,12 @@ namespace Example.Sort.Service
                 Heapify(array, 0, i);
             }
 
+        }
+
+        public Otterop.Lang.Array<Otterop.Lang.String> Sort(Otterop.Lang.Array<Otterop.Lang.String> array)
+        {
+            SortWithIndices(array, 0, array.Size());
+            return array;
         }
 
     }

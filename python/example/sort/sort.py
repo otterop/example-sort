@@ -29,10 +29,10 @@ class Sort:
         sort_service = QuicksortService()
         if is_heap:
             sort_service = HeapsortService()
-        sort_service.sort(args_array, 0, args_array.size())
+        ret = sort_service.sort(args_array)
         i = 0
-        while i < args_array.size():
-            println(args_array.get(i))
+        while i < ret.size():
+            println(ret.get(i))
             i += 1
         Result.of(String.wrap(""), String.wrap(""))
 

@@ -12,7 +12,7 @@ export class QuicksortService {
         array.set(fromIdx, tmp);
     }
 
-    public sort(array : Array<String>, fromIdx : number, toIdx : number) : void {
+    sortWithIndices(array : Array<String>, fromIdx : number, toIdx : number) : void {
         let i : number = fromIdx;
         let swapWith : number = -1;
         let pivot : number = toIdx - 1;
@@ -42,12 +42,17 @@ export class QuicksortService {
         }
         
         if (pivot > fromIdx + 1) {
-            this.sort(array, fromIdx, pivot);
+            this.sortWithIndices(array, fromIdx, pivot);
         }
         
         if (pivot + 1 < toIdx - 1) {
-            this.sort(array, pivot + 1, toIdx);
+            this.sortWithIndices(array, pivot + 1, toIdx);
         }
+    }
+
+    public sort(array : Array<String>) : Array<String> {
+        this.sortWithIndices(array, 0, array.size());
+        return array;
     }
 }
 

@@ -41,9 +41,9 @@ public class Sort {
             sortService = new HeapsortService();
         }
 
-        sortService.sort(argsArray, 0, argsArray.size());
-        for (int i = 0; i< argsArray.size(); i++) {
-            println(argsArray.get(i));
+        Array<String> ret = sortService.sort(argsArray);
+        for (int i = 0; i< ret.size(); i++) {
+            println(ret.get(i));
         }
         Result.of(String.wrap(""), String.wrap(""));
     }

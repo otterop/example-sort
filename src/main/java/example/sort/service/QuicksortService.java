@@ -16,7 +16,7 @@ public class QuicksortService implements SortService {
         array.set(fromIdx, tmp);
     }
 
-    public void sort(Array<String> array, int fromIdx, int toIdx) {
+    private void sortWithIndices(Array<String> array, int fromIdx, int toIdx) {
         int i = fromIdx;
         int swapWith = -1;
         int pivot = toIdx - 1;
@@ -41,10 +41,15 @@ public class QuicksortService implements SortService {
             }
         }
         if(pivot > fromIdx + 1) {
-            this.sort(array, fromIdx, pivot);
+            this.sortWithIndices(array, fromIdx, pivot);
         }
         if (pivot + 1 < toIdx - 1) {
-            this.sort(array, pivot + 1, toIdx);
+            this.sortWithIndices(array, pivot + 1, toIdx);
         }
+    }
+
+    public Array<String> sort(Array<String> array) {
+        this.sortWithIndices(array, 0, array.size());
+        return array;
     }
 }

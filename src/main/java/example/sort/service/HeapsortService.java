@@ -40,7 +40,7 @@ public class HeapsortService implements SortService {
         }
     }
 
-    public void sort(Array<String> array, int fromIdx, int toIdx) {
+    private void sortWithIndices(Array<String> array, int fromIdx, int toIdx) {
         int n = array.size();
         for (int i = n / 2 - 1; i >= 0; i--) {
             this.heapify(array, i, n);
@@ -50,5 +50,10 @@ public class HeapsortService implements SortService {
             this.swap(array, 0, i);
             this.heapify(array, 0, i);
         }
+    }
+
+    public Array<String> sort(Array<String> array) {
+        this.sortWithIndices(array, 0, array.size());
+        return array;
     }
 }

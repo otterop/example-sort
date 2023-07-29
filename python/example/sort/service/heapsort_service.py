@@ -26,7 +26,7 @@ class HeapsortService:
             self.swap(array, parent, largest)
             self.heapify(array, largest, size)
 
-    def sort(self, array, from_idx, to_idx):
+    def sort_with_indices(self, array, from_idx, to_idx):
         n = array.size()
         i = n // 2 - 1
         while i >= 0:
@@ -37,3 +37,7 @@ class HeapsortService:
             self.swap(array, 0, i)
             self.heapify(array, 0, i)
             i -= 1
+
+    def sort(self, array):
+        self.sort_with_indices(array, 0, array.size())
+        return array

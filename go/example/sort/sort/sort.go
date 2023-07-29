@@ -44,9 +44,9 @@ func main()  {
     if isHeap {
         sortService = heapsortservice.NewHeapsortService()
     }
-    sortService.Sort(argsArray, 0, argsArray.Size())
-    for i := 0; i < argsArray.Size(); i++ {
-        Println(argsArray.Get(i))
+    var ret *array.Array[*string.String] = sortService.Sort(argsArray)
+    for i := 0; i < ret.Size(); i++ {
+        Println(ret.Get(i))
     }
     result.Of(string.Wrap(""), string.Wrap(""))
 }

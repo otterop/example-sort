@@ -10,7 +10,7 @@ class QuicksortService:
         array.set(to_idx, array.get(from_idx))
         array.set(from_idx, tmp)
 
-    def sort(self, array, from_idx, to_idx):
+    def sort_with_indices(self, array, from_idx, to_idx):
         i = from_idx
         swap_with = -1
         pivot = to_idx - 1
@@ -31,6 +31,10 @@ class QuicksortService:
                 self.swap(array, swap_with, pivot)
                 pivot = swap_with
         if pivot > from_idx + 1:
-            self.sort(array, from_idx, pivot)
+            self.sort_with_indices(array, from_idx, pivot)
         if pivot + 1 < to_idx - 1:
-            self.sort(array, pivot + 1, to_idx)
+            self.sort_with_indices(array, pivot + 1, to_idx)
+
+    def sort(self, array):
+        self.sort_with_indices(array, 0, array.size())
+        return array

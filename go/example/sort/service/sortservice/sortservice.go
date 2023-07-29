@@ -6,6 +6,6 @@ import (
 )
 
 type SortService interface {
-     Sort(array *array.Array[*string.String], fromIdx int, toIdx int);
+    Sort(array *array.Array[*string.String]) *array.Array[*string.String];
 }
 

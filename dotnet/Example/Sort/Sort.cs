@@ -30,10 +30,10 @@ namespace Example.Sort
                 sortService = new Example.Sort.Service.HeapsortService();
             }
 
-            sortService.Sort(argsArray, 0, argsArray.Size());
-            for (int i = 0; i < argsArray.Size(); i++)
+            Otterop.Lang.Array<Otterop.Lang.String> ret = sortService.Sort(argsArray);
+            for (int i = 0; i < ret.Size(); i++)
             {
-                Otterop.Io.Console.Println(argsArray.Get(i));
+                Otterop.Io.Console.Println(ret.Get(i));
             }
 
             Otterop.Lang.Result.Of(Otterop.Lang.String.Wrap(""), Otterop.Lang.String.Wrap(""));

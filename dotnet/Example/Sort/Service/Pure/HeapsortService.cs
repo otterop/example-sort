@@ -13,7 +13,7 @@ namespace Example.Sort.Service.Pure
             this.otterop = new Example.Sort.Service.HeapsortService();
         }
 
-        public void Sort(string[] array, int fromIdx, int toIdx)
+        public string[] Sort(string[] array)
         {
             var _arrayArray = new Otterop.Lang.String[array.Count()];
             for (var i = 0; i < array.Count(); i++)
@@ -21,7 +21,14 @@ namespace Example.Sort.Service.Pure
                 _arrayArray[i] = Otterop.Lang.String.wrap(array[i]);
             }
             var _array = Otterop.Lang.Array.Wrap(_arrayArray);
-            otterop.Sort(_array, fromIdx, toIdx);
+            var retOtterop = otterop.Sort(_array);
+            var ret = new string[retOtterop.Size()];
+            for (var i = 0; i < retOtterop.Size(); i++)
+            {
+                var retI = retOtterop.Get(i);
+                ret[i] = retI.unwrap();
+            }
+            return ret;
         }
 
         public Example.Sort.Service.HeapsortService unwrap()

@@ -2,19 +2,26 @@ import { Array } from '@otterop/lang/array';
 
 export class Node {
 
-    private _children : Array<Node>;
+    private __children : Array<Node>;
 
-    public constructor(children : Array<Node>) {
-        this._children = children;
+    private __value : number;
+
+    public constructor(value : number, children : Array<Node>) {
+        this.__value = value;
+        this.__children = children;
+    }
+
+    public value() : number {
+        return this.__value;
     }
 
     public child(i : number) : Node {
-        let children : Array<Node> = this._children;
+        let children : Array<Node> = this.__children;
         return children.get(i);
     }
 
     public children() : Array<Node> {
-        return this._children;
+        return this.__children;
     }
 }
 

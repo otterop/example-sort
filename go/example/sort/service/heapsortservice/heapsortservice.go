@@ -49,7 +49,7 @@ func (this *HeapsortService) heapify(array *array.Array[*string.String], parent 
     }
 }
 
-func (this *HeapsortService) Sort(array *array.Array[*string.String], fromIdx int, toIdx int)  {
+func (this *HeapsortService) sortWithIndices(array *array.Array[*string.String], fromIdx int, toIdx int)  {
     var n int = array.Size()
     for i := n / 2 - 1; i >= 0; i-- {
         this.heapify(array, i, n)
@@ -58,4 +58,9 @@ func (this *HeapsortService) Sort(array *array.Array[*string.String], fromIdx in
         this.swap(array, 0, i)
         this.heapify(array, 0, i)
     }
+}
+
+func (this *HeapsortService) Sort(array *array.Array[*string.String]) *array.Array[*string.String] {
+    this.sortWithIndices(array, 0, array.Size())
+    return array
 }
