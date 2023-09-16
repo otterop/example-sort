@@ -25,7 +25,7 @@ dependencies {
 }
 
 tasks.withType<Jar>() {
-    manifest.attributes["Main-Class"] = "example.sort.Sort"
+    manifest.attributes["Main-Class"] = "example.sort.SortPure"
     configurations["compileClasspath"].forEach { file: File ->
         from(zipTree(file.absoluteFile))
     }
@@ -33,7 +33,7 @@ tasks.withType<Jar>() {
 
 application {
     // Define the main class for the application.
-    mainClass.set("example.sort.Sort")
+    mainClass.set("example.sort.SortPure")
 }
 
 tasks.named<Test>("test") {

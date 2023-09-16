@@ -1,7 +1,11 @@
 add_executable(example_sort
 example/sort/service/heapsort_service.c
+example/sort/service/pure/heapsort_service.c
+example/sort/service/pure/quicksort_service.c
+example/sort/service/pure/sort_service.c
 example/sort/service/quicksort_service.c
 example/sort/service/sort_service.c
-example/sort/sort.c
+example/sort/sort_pure.c
 example/sort/tree/node.c
+example/sort/tree/pure/node.c
 )

@@ -7,7 +7,7 @@ echo "Run .NET ..."
 echo "Run C ..."
 (cd c && ./out/bin/example_sort $@)
 echo "Run Python ..."
-(cd python && . _venv/bin/activate && python -m example.sort.sort $@)
+(cd python && . _venv/bin/activate && python -m example.sort.sort_pure $@)
 echo "Run Go ..."
 (./go/example/sort/sort/sort $@)
 echo "Run JS ..."
