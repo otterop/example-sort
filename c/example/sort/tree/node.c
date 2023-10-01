@@ -7,8 +7,6 @@ typedef struct example_sort_tree_Node_s {
 } example_sort_tree_Node_t;
 
 
-;
-;
 
 
 example_sort_tree_Node_t *example_sort_tree_Node_new(int value, otterop_lang_Array_t *children) {
