@@ -1,7 +1,7 @@
 package node
 
 import (
-    "github.com/otterop/otterop/go/lang/array"
+    array "github.com/otterop/otterop/go/lang/array"
 )
 
 type Node struct {

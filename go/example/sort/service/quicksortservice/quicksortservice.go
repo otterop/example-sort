@@ -1,8 +1,8 @@
 package quicksortservice
 
 import (
-    "github.com/otterop/otterop/go/lang/array"
-    "github.com/otterop/otterop/go/lang/string"
+    array "github.com/otterop/otterop/go/lang/array"
+    string "github.com/otterop/otterop/go/lang/string"
 )
 
 type QuicksortService struct {
