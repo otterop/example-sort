@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "@otterop/io": "^0.2.0",
-    "@otterop/lang": "^0.2.0"
+    "@otterop/lang": "file:../otterop/ts/lang"
   }
 }

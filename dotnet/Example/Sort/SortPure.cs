@@ -44,7 +44,23 @@ namespace Example.Sort
             var f = new Node(6, new Node[]{d,e});
             var g = new Node(7, new Node[]{c,f});
 
-            Console.WriteLine($"{g.Value()} {g.Children()}");
+            var list = new List<Node>();
+            list.Add(g);
+            while (list.Count() > 0)
+            {
+                var nextList = new List<Node>();
+                bool rest = false;
+                foreach (var el in list)
+                {
+                    if (rest)
+                        Console.Write(" ");
+                    Console.Write($"value: {el.Value()}");
+                    nextList.AddRange(el.Children());
+                    rest = true;
+                }
+                Console.WriteLine();
+                list = nextList;
+            }
         }
 
     }

@@ -9,6 +9,6 @@ echo "Run C ..."
 echo "Run Python ..."
 (cd python && . _venv/bin/activate && python -m example.sort.sort_pure $@)
 echo "Run Go ..."
-(./go/example/sort/sort/sort $@)
+(./go/example/sort/sort $@)
 echo "Run JS ..."
-(cd ts && node example/sort/Sort.js $@)
+(cd ts && node example/sort/SortPure.js $@)

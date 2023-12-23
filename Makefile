@@ -59,7 +59,7 @@ build-dotnet:
 
 build-go:
 	@echo "Build Go example ..."
-	@(cd go/example/sort/sort && \
+	@(cd go/example/sort && \
 	go build) > /dev/null
 
 clean: check-submodules

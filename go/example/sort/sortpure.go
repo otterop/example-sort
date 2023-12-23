@@ -58,5 +58,20 @@ func main() {
     f := node.NewNode(6, []*node.Node {d, e})
     g := node.NewNode(7, []*node.Node {c, f})
 
-    fmt.Printf("%d %d\n", g.Value(), len(g.Children()))
+    list := make([]*node.Node, 1)
+    list[0] = g
+    for len(list) > 0 {
+        newList := make([]*node.Node, 0)
+        rest := false
+        for _, el := range list {
+            if rest {
+                fmt.Print(" ")
+            }
+            fmt.Printf("value: %d", el.Value())
+            newList = append(newList, el.Children()...)
+            rest = true
+        }
+        fmt.Println()
+        list = newList
+    }
 }

@@ -1,7 +1,8 @@
 import { Array } from '@otterop/lang/array';
 import { String } from '@otterop/lang/string';
+import { SortService } from './SortService';
 
-export class HeapsortService {
+export class HeapsortService implements SortService {
 
     public constructor() {
     }

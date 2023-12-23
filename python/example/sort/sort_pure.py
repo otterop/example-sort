@@ -32,7 +32,18 @@ class Sort:
         f = Node(6, [d,e])
         g = Node(7, [c,f])
 
-        print(g.value(), g.children())
+        list = [g]
+        while len(list) > 0:
+            new_list = []
+            rest = False
+            for el in list:
+                if rest:
+                    print(' ', end='')
+                print(f'value: {el.value()}', end='')
+                new_list.extend(el.children())
+                rest = True
+            print()
+            list = new_list
 
 if __name__ == "__main__":
     Sort.main(sys.argv[1:])

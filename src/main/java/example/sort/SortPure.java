@@ -5,6 +5,9 @@ import example.sort.service.pure.QuicksortService;
 import example.sort.service.pure.SortService;
 import example.sort.tree.pure.Node;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+
 public class SortPure {
 
     public static void main(String[] args) {
@@ -44,6 +47,20 @@ public class SortPure {
         var f = new Node(6, new Node[]{d,e});
         var g = new Node(7, new Node[]{c,f});
 
-        System.out.println(g.value() + " " + g.children().length);
+        var list = new LinkedList<Node>();
+        list.add(g);
+        while(list.size() > 0) {
+            var nextList = new LinkedList<Node>();
+            boolean rest = false;
+            for (Node el : list) {
+                if (rest)
+                    System.out.print(" ");
+                System.out.print("value: " + el.value());
+                nextList.addAll(Arrays.asList(el.children()));
+                rest = true;
+            }
+            System.out.println();
+            list = nextList;
+        }
     }
 }
