@@ -1,4 +1,6 @@
 add_executable(example_sort
+example/sort/inheritance/animal.c
+example/sort/inheritance/dog.c
 example/sort/service/heapsort_service.c
 example/sort/service/pure/heapsort_service.c
 example/sort/service/pure/quicksort_service.c

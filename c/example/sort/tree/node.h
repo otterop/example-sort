@@ -16,4 +16,5 @@ example_sort_tree_Node_t *example_sort_tree_Node_child(example_sort_tree_Node_t 
 
 
 otterop_lang_Array_t *example_sort_tree_Node_children(example_sort_tree_Node_t *this);
+
 #endif
