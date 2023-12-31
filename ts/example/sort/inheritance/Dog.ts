@@ -1,4 +1,4 @@
-import { String } from '@otterop/lang/string';
+import { String } from '@otterop/lang/String';
 import { Animal } from './Animal';
 
 export class Dog extends Animal {

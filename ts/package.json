@@ -14,11 +14,11 @@
   "author": "Emanuele Sabellico",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "typescript": "^4.9.4"
+    "@types/node": "^18.19.4",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@otterop/io": "^0.2.0",
+    "@otterop/io": "file:../otterop/ts/io",
     "@otterop/lang": "file:../otterop/ts/lang"
   }
 }

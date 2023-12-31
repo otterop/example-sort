@@ -1,0 +1,14 @@
+basePackage: example.sort
+targetType: executable
+python:
+  outPath: python/example/sort/
+ts:
+  outPath: ts/example/sort/
+c:
+  outPath: c/example/sort/
+csharp:
+  outPath: dotnet/Example/Sort/
+go:
+  outPath: go/example/sort/
+  packageMapping:
+      example.sort: github.com/otterop/example-sort/go/example/sort

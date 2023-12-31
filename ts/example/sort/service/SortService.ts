@@ -1,5 +1,5 @@
-import { Array } from '@otterop/lang/array';
-import { String } from '@otterop/lang/string';
+import { Array } from '@otterop/lang/Array';
+import { String } from '@otterop/lang/String';
 
 export interface SortService{
     sort(array : Array<String>) : Array<String>;

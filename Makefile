@@ -24,7 +24,7 @@ otterop: check-submodules
 
 transpile: otterop build-java
 	@echo "Transpile Java example ..."
-	@java -cp otterop/java/transpiler/build/libs/transpiler-$(VERSION).jar:$$HOME/.m2/repository/otterop/lang/$(VERSION)/lang-$(VERSION).jar:$$HOME/.m2/repository/otterop/io/$(VERSION)/io-$(VERSION).jar:build/libs/otterop-example-sort.jar otterop.transpiler.Otterop src/main/java
+	@java -cp otterop/java/transpiler/build/libs/transpiler-$(VERSION).jar:$$HOME/.m2/repository/otterop/lang/$(VERSION)/lang-$(VERSION).jar:$$HOME/.m2/repository/otterop/io/$(VERSION)/io-$(VERSION).jar:build/libs/otterop-example-sort.jar otterop.transpiler.Otterop config/oopconfig.yml
 
 build-java:
 	@echo "Build Java example ..."
@@ -49,8 +49,8 @@ build-ts:
 	@echo "Build TypeScript example ..."
 	@(cd ts && \
 	rm -rf node_modules && \
-	npm ci && \
-	npm run build) > /dev/null
+	pnpm i && \
+	pnpm run build) > /dev/null
 
 build-dotnet:
 	@echo "Build .NET example ..."

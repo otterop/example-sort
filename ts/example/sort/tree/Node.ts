@@ -1,4 +1,4 @@
-import { Array } from '@otterop/lang/array';
+import { Array } from '@otterop/lang/Array';
 
 export class Node {
 

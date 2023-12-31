@@ -1,5 +1,5 @@
-import { String as StringOtterOP } from '@otterop/lang/string';
-import { Array as ArrayOtterOP } from '@otterop/lang/array';
+import { String as StringOtterOP } from '@otterop/lang/String';
+import { Array as ArrayOtterOP } from '@otterop/lang/Array';
 import { QuicksortService as QuicksortServiceOtterOP } from '../QuicksortService';
 import { SortService } from './SortService';
 

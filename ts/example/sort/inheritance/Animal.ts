@@ -1,5 +1,5 @@
 import { Node } from '../tree/Node';
-import { String } from '@otterop/lang/string';
+import { String } from '@otterop/lang/String';
 
 export class Animal {
 

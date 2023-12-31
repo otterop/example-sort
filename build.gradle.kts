@@ -21,7 +21,7 @@ dependencies {
     implementation("otterop:lang:0.2.0-SNAPSHOT")
     implementation("otterop:io:0.2.0-SNAPSHOT")
     // Use JUnit Jupiter for testing.
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
+    testImplementation("otterop:test:0.2.0-SNAPSHOT")
 }
 
 tasks.withType<Jar>() {

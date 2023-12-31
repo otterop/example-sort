@@ -1,0 +1,4 @@
+target_sources(example_sort
+  PUBLIC
+  example/sort/sort_pure.c
+)
