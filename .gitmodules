@@ -1,3 +1,6 @@
 [submodule "otterop"]
 	path = otterop
 	url = git@github.com:otterop/otterop.git
+[submodule "c/test/unity"]
+	path = c/test/unity
+	url = https://github.com/ThrowTheSwitch/Unity.git

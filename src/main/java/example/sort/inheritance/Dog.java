@@ -10,6 +10,7 @@ public class Dog extends Animal {
         this.dogWord = String.wrap("bark");
     }
 
+    @Override
     public String act() {
         super.act();
         return this.dogWord;

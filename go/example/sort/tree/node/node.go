@@ -4,6 +4,7 @@ import (
     array "github.com/otterop/otterop/go/lang/array"
 )
 
+
 type Node struct {
     _children *array.Array[*Node]
     _value int

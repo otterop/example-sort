@@ -4,6 +4,7 @@ import (
     string "github.com/otterop/otterop/go/lang/string"
 )
 
+
 type Animal struct {
     word *string.String
 }

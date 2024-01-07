@@ -3,7 +3,7 @@ set -e
 echo "Run Java ..."
 (java -jar build/libs/otterop-example-sort.jar $@)
 echo "Run .NET ..."
-(cd dotnet && ./bin/Debug/*/Sort $@)
+(cd dotnet/src && ./bin/Debug/*/Sort $@)
 echo "Run C ..."
 (cd c && ./out/bin/example_sort $@)
 echo "Run Python ..."

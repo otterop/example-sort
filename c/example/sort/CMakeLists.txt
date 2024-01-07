@@ -1,13 +1,25 @@
 add_executable(example_sort
-example/sort/inheritance/animal.c
-example/sort/inheritance/dog.c
-example/sort/service/heapsort_service.c
-example/sort/service/pure/heapsort_service.c
-example/sort/service/pure/quicksort_service.c
-example/sort/service/pure/sort_service.c
-example/sort/service/quicksort_service.c
-example/sort/service/sort_service.c
-example/sort/tree/node.c
-example/sort/tree/pure/node.c
+${CMAKE_CURRENT_LIST_DIR}/inheritance/animal.c
+${CMAKE_CURRENT_LIST_DIR}/inheritance/dog.c
+${CMAKE_CURRENT_LIST_DIR}/service/heapsort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/pure/heapsort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/pure/quicksort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/pure/sort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/quicksort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/sort_service.c
+${CMAKE_CURRENT_LIST_DIR}/tree/node.c
+${CMAKE_CURRENT_LIST_DIR}/tree/pure/node.c
 )
-include(example/sort/CMakeLists.manual.txt OPTIONAL)
+add_library(example_sort__lib STATIC
+${CMAKE_CURRENT_LIST_DIR}/inheritance/animal.c
+${CMAKE_CURRENT_LIST_DIR}/inheritance/dog.c
+${CMAKE_CURRENT_LIST_DIR}/service/heapsort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/pure/heapsort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/pure/quicksort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/pure/sort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/quicksort_service.c
+${CMAKE_CURRENT_LIST_DIR}/service/sort_service.c
+${CMAKE_CURRENT_LIST_DIR}/tree/node.c
+${CMAKE_CURRENT_LIST_DIR}/tree/pure/node.c
+)
+include(${CMAKE_CURRENT_LIST_DIR}/CMakeLists.manual.txt OPTIONAL)

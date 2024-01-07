@@ -15,5 +15,11 @@ description = "OtterOP Quicksort Example"
 requires-python = ">=3.7"
 dependencies = [
   'otterop-io >= 0.2.0',
-  'otterop-lang >= 0.2.0'
+  'otterop-lang >= 0.2.0',
+]
+
+[project.optional-dependencies]
+tests = [
+  'pytest >= 7.4.4',
+  'otterop-test >= 0.2.0'
 ]

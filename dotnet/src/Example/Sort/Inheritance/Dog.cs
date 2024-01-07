@@ -8,7 +8,7 @@ namespace Example.Sort.Inheritance
             this.dogWord = Otterop.Lang.String.Wrap("bark");
         }
 
-        public Otterop.Lang.String Act()
+        public new Otterop.Lang.String Act()
         {
             base.Act();
             return this.dogWord;

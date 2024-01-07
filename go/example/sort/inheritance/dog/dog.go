@@ -5,6 +5,7 @@ import (
     "github.com/otterop/example-sort/go/example/sort/inheritance/animal"
 )
 
+
 type Dog struct {
     *animal.Animal
     dogWord *string.String

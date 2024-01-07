@@ -6,8 +6,10 @@ ts:
   outPath: ts/example/sort/
 c:
   outPath: c/example/sort/
+  testOutPath: c/test/tests/example/sort/
 csharp:
-  outPath: dotnet/Example/Sort/
+  outPath: dotnet/src/Example/Sort/
+  testOutPath: dotnet/tests/Example/Sort/
 go:
   outPath: go/example/sort/
   packageMapping:

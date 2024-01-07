@@ -4,7 +4,7 @@ import otterop.lang.String;
 import otterop.test.Test;
 import otterop.test.TestBase;
 
-public class TestQuicksortService extends TestBase {
+public class TestHeapsortService extends TestBase {
 
     @Test
     public void normalSort() {
@@ -13,7 +13,7 @@ public class TestQuicksortService extends TestBase {
         items.set(0, String.wrap("3"));
         items.set(1, String.wrap("2"));
         items.set(2, String.wrap("1"));
-        SortService sortService = new QuicksortService();
+        SortService sortService = new HeapsortService();
         Array<String> itemsSorted = sortService.sort(items);
         this.assertTrue(itemsSorted.size() == 3, String.wrap("itemsSorted should have size 3"));
         item = itemsSorted.get(0);
@@ -32,7 +32,7 @@ public class TestQuicksortService extends TestBase {
         String item;
         Array<String> items = Array.newArray(1, (String) null);
         items.set(0, String.wrap("1"));
-        SortService sortService = new QuicksortService();
+        SortService sortService = new HeapsortService();
         Array<String> itemsSorted = sortService.sort(items);
         this.assertTrue(itemsSorted.size() == 1, String.wrap("itemsSorted should have size 1"));
         item = itemsSorted.get(0);
@@ -48,7 +48,7 @@ public class TestQuicksortService extends TestBase {
         items.set(1, String.wrap("1"));
         items.set(2, String.wrap("1"));
 
-        SortService sortService = new QuicksortService();
+        SortService sortService = new HeapsortService();
         Array<String> itemsSorted = sortService.sort(items);
         this.assertTrue(itemsSorted.size() == 3, String.wrap("itemsSorted should have size 3"));
         item = itemsSorted.get(0);
