@@ -19,4 +19,6 @@ void example_sort_service_TestQuicksortService_same_item(example_sort_service_Te
 
 
 void example_sort_service_TestQuicksortService_assert_true(example_sort_service_TestQuicksortService_t *this, int arg0, otterop_lang_String_t *arg1);
+
+example_sort_service_TestQuicksortService_t* example_sort_service_TestQuicksortService_new();
 #endif

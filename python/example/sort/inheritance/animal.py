@@ -4,10 +4,10 @@ from otterop.lang.string import String
 class Animal:
     
     def __init__(self, word):
-        self.word = word
+        self._word = word
 
     def act(self):
-        return self.word
+        return self._word
 
     def species(self):
         return String.wrap("unknown")

@@ -53,7 +53,7 @@ configure-published:
 	./ts/package.json.tpl > ./ts/package.json) > /dev/null
 
 transpile: build-java
-	@echo "$(BLUE)Transpile Java example ...${RESET_COLOR}"
+	@echo "$(BLUE)Transpile Java ...${RESET_COLOR}"
 	@java -cp otterop/java/transpiler/build/libs/transpiler-$(OTTEROP_VERSION).jar:otterop/java/lang/build/libs/lang-$(OTTEROP_VERSION).jar:otterop/java/io/build/libs/io-$(OTTEROP_VERSION).jar:otterop/java/test/build/libs/test-$(OTTEROP_VERSION).jar:build/classes/java/main:build/classes/java/test otterop.transpiler.Otterop config/oopconfig.yml
 
 build-java:

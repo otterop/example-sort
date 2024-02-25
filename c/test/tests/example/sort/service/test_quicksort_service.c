@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <example/sort/service/sort_service.h>
 #include <example/sort/service/quicksort_service.h>
+#include <gc.h>
 
 typedef struct example_sort_service_TestQuicksortService_s {
     otterop_test_TestBase_t *_super;
