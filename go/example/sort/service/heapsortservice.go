@@ -1,8 +1,7 @@
-package heapsortservice
+package service
 
 import (
-    array "github.com/otterop/otterop/go/lang/array"
-    string "github.com/otterop/otterop/go/lang/string"
+    lang "github.com/otterop/otterop/go/lang"
 )
 
 
@@ -12,24 +11,24 @@ type HeapsortService struct {
 
 
 
-func NewHeapsortService() *HeapsortService {
+func HeapsortServiceNew() *HeapsortService {
     this := new(HeapsortService)
     return this
 }
 
-func (this *HeapsortService) swap(array *array.Array[*string.String], fromIdx int, toIdx int)  {
-    var tmp *string.String = array.Get(toIdx)
+func (this *HeapsortService) swap(array *lang.Array[*lang.String], fromIdx int, toIdx int)  {
+    var tmp *lang.String = array.Get(toIdx)
     array.Set(toIdx, array.Get(fromIdx))
     array.Set(fromIdx, tmp)
 }
 
-func (this *HeapsortService) heapify(array *array.Array[*string.String], parent int, size int)  {
+func (this *HeapsortService) heapify(array *lang.Array[*lang.String], parent int, size int)  {
     var largest int = parent
     var leftChild int = parent * 2 + 1
     var rightChild int = parent * 2 + 2
     
     if leftChild < size {
-        var leftS *string.String = array.Get(leftChild)
+        var leftS *lang.String = array.Get(leftChild)
         
         if leftS.CompareTo(array.Get(largest)) > 0 {
             largest = leftChild
@@ -37,7 +36,7 @@ func (this *HeapsortService) heapify(array *array.Array[*string.String], parent 
     }
     
     if rightChild < size {
-        var rightS *string.String = array.Get(rightChild)
+        var rightS *lang.String = array.Get(rightChild)
         
         if rightS.CompareTo(array.Get(largest)) > 0 {
             largest = rightChild
@@ -50,7 +49,7 @@ func (this *HeapsortService) heapify(array *array.Array[*string.String], parent 
     }
 }
 
-func (this *HeapsortService) sortWithIndices(array *array.Array[*string.String], fromIdx int, toIdx int)  {
+func (this *HeapsortService) sortWithIndices(array *lang.Array[*lang.String], fromIdx int, toIdx int)  {
     var n int = array.Size()
     for i := n / 2 - 1; i >= 0; i-- {
         this.heapify(array, i, n)
@@ -61,7 +60,7 @@ func (this *HeapsortService) sortWithIndices(array *array.Array[*string.String],
     }
 }
 
-func (this *HeapsortService) Sort(array *array.Array[*string.String]) *array.Array[*string.String] {
+func (this *HeapsortService) Sort(array *lang.Array[*lang.String]) *lang.Array[*lang.String] {
     this.sortWithIndices(array, 0, array.Size())
     return array
 }

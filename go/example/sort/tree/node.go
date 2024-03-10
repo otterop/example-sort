@@ -1,19 +1,19 @@
-package node
+package tree
 
 import (
-    array "github.com/otterop/otterop/go/lang/array"
+    lang "github.com/otterop/otterop/go/lang"
 )
 
 
 type Node struct {
-    _children *array.Array[*Node]
+    _children *lang.Array[*Node]
     _value int
 }
 
 
 
 
-func NewNode(value int, children *array.Array[*Node]) *Node {
+func NodeNew(value int, children *lang.Array[*Node]) *Node {
     this := new(Node)
     this._value = value
     this._children = children
@@ -25,10 +25,10 @@ func (this *Node) Value() int {
 }
 
 func (this *Node) Child(i int) *Node {
-    var children *array.Array[*Node] = this._children
+    var children *lang.Array[*Node] = this._children
     return children.Get(i)
 }
 
-func (this *Node) Children() *array.Array[*Node] {
+func (this *Node) Children() *lang.Array[*Node] {
     return this._children
 }

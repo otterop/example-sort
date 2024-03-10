@@ -3,10 +3,8 @@ package main
 import (
     "fmt"
     "os"
-    sortservice "github.com/otterop/example-sort/go/example/sort/service/sortservice/pure"
-    quicksortservice "github.com/otterop/example-sort/go/example/sort/service/quicksortservice/pure"
-    heapsortservice "github.com/otterop/example-sort/go/example/sort/service/heapsortservice/pure"
-    node "github.com/otterop/example-sort/go/example/sort/tree/node/pure"
+    service "github.com/otterop/example-sort/go/example/sort/service/pure"
+    tree "github.com/otterop/example-sort/go/example/sort/tree/pure"
 )
 
 func main() {
@@ -36,11 +34,11 @@ func main() {
         argsP[i] = &slicedArray[i]
     }
 
-    var sortService sortservice.SortService
+    var sortService service.SortService
     if (isHeap) {
-        sortService = heapsortservice.NewHeapsortService()
+        sortService = service.HeapsortServiceNew()
     } else {
-        sortService = quicksortservice.NewQuicksortService()
+        sortService = service.QuicksortServiceNew()
     }
 
     ret := sortService.Sort(argsP)
@@ -49,19 +47,19 @@ func main() {
         fmt.Println(*ret[i])
     }
 
-    empty := make([]*node.Node, 0)
-    a := node.NewNode(1, empty)
-    b := node.NewNode(2, empty)
-    c := node.NewNode(3, []*node.Node {a, b})
-    d := node.NewNode(4, empty)
-    e := node.NewNode(5, empty)
-    f := node.NewNode(6, []*node.Node {d, e})
-    g := node.NewNode(7, []*node.Node {c, f})
+    empty := make([]*tree.Node, 0)
+    a := tree.NodeNew(1, empty)
+    b := tree.NodeNew(2, empty)
+    c := tree.NodeNew(3, []*tree.Node {a, b})
+    d := tree.NodeNew(4, empty)
+    e := tree.NodeNew(5, empty)
+    f := tree.NodeNew(6, []*tree.Node {d, e})
+    g := tree.NodeNew(7, []*tree.Node {c, f})
 
-    list := make([]*node.Node, 1)
+    list := make([]*tree.Node, 1)
     list[0] = g
     for len(list) > 0 {
-        newList := make([]*node.Node, 0)
+        newList := make([]*tree.Node, 0)
         rest := false
         for _, el := range list {
             if rest {
